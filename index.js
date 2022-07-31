@@ -21,8 +21,10 @@ switch (randomNumber) {
 }
 console.log(getComputerChoice());
 
-const playerSelection = "rock";
-playerSelection.toLowerCase();
+let playerInput = prompt("Rock Paper Scissors, shoot!");
+
+let playerSelection = playerInput.toLowerCase();
+
 const computerSelection = getComputerChoice();
 
 console.log(computerSelection);
@@ -35,6 +37,20 @@ function playRound(playerSelection, computerSelection) {
         alert("You lose! Paper beats Rock.");
     } else if (playerSelection === 'rock' && computerSelection == 'scissors') {
         alert("You win! Rock beats scissors.");
+    } else if (playerSelection === 'scissors' && computerSelection == 'scissors') {
+        alert("Tie Game. Play again.");
+    } else if (playerSelection === 'scissors' && computerSelection == 'rock') {
+        alert("You lose! Rock beats scissors.");
+    } else if (playerSelection === 'scissors' && computerSelection == 'paper') {
+        alert("You win! Scissors beats paper.");
+    } else if (playerSelection === 'paper' && computerSelection == 'scissors') {
+        alert("You lose! Scissors beats paper.");
+    } else if (playerSelection === 'paper' && computerSelection == 'rock') {
+        alert("You win! Paper beats rock.");
+    } else if (playerSelection === 'paper' && computerSelection == 'paper') {
+        alert("Tie Game. Play again.");
+    } else {
+        alert("Not a valid entry. Try again");
     }
     }
 
